@@ -15,6 +15,9 @@
       <Filter>BlackGPIO</Filter>
     </ClCompile>
     <ClCompile Include="BlackCore.cpp" />
+    <ClCompile Include="INA219\INA219.cpp">
+      <Filter>INA219</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BlackADC">
@@ -28,6 +31,9 @@
     </Filter>
     <Filter Include="BlackGPIO">
       <UniqueIdentifier>{886261a2-f01a-49f8-b4fc-99adf85469bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INA219">
+      <UniqueIdentifier>{447aff41-592c-4352-b227-bdb5a0816277}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,5 +53,8 @@
     <ClInclude Include="BlackDef.h" />
     <ClInclude Include="BlackErr.h" />
     <ClInclude Include="ChargingController.h" />
+    <ClInclude Include="INA219\INA219.h">
+      <Filter>INA219</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

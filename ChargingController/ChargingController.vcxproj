@@ -67,6 +67,7 @@
     <ClCompile Include="BlackI2C\BlackI2C.cpp" />
     <ClCompile Include="BlackPWM\BlackPWM.cpp" />
     <ClCompile Include="ChargingController.cpp" />
+    <ClCompile Include="INA219\INA219.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlackADC\BlackADC.h" />
@@ -77,6 +78,7 @@
     <ClInclude Include="BlackI2C\BlackI2C.h" />
     <ClInclude Include="BlackPWM\BlackPWM.h" />
     <ClInclude Include="ChargingController.h" />
+    <ClInclude Include="INA219\INA219.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
