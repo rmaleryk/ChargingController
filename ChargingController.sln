@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChargingController", "ChargingController\ChargingController.vcxproj", "{D48BC1F5-FE46-48D7-A7BB-3E6B9E861061}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D48BC1F5-FE46-48D7-A7BB-3E6B9E861061}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D48BC1F5-FE46-48D7-A7BB-3E6B9E861061}.Debug|ARM.Build.0 = Debug|ARM
+		{D48BC1F5-FE46-48D7-A7BB-3E6B9E861061}.Release|ARM.ActiveCfg = Release|ARM
+		{D48BC1F5-FE46-48D7-A7BB-3E6B9E861061}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

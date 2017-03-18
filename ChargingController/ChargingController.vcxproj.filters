@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ChargingController.cpp" />
+    <ClCompile Include="BlackADC\BlackADC.cpp">
+      <Filter>BlackADC</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackPWM\BlackPWM.cpp">
+      <Filter>BlackPWM</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackI2C\BlackI2C.cpp">
+      <Filter>BlackI2C</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackGPIO\BlackGPIO.cpp">
+      <Filter>BlackGPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackCore.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="BlackADC">
+      <UniqueIdentifier>{ca293c95-22a5-4340-a6f7-a2e78a9f4b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BlackPWM">
+      <UniqueIdentifier>{62549b33-3b70-4aa6-af0f-39357957f22c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BlackI2C">
+      <UniqueIdentifier>{9576d802-e046-42b4-8b48-12db213d8700}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BlackGPIO">
+      <UniqueIdentifier>{886261a2-f01a-49f8-b4fc-99adf85469bc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BlackADC\BlackADC.h">
+      <Filter>BlackADC</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackPWM\BlackPWM.h">
+      <Filter>BlackPWM</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackI2C\BlackI2C.h">
+      <Filter>BlackI2C</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackGPIO\BlackGPIO.h">
+      <Filter>BlackGPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackCore.h" />
+    <ClInclude Include="BlackDef.h" />
+    <ClInclude Include="BlackErr.h" />
+    <ClInclude Include="ChargingController.h" />
+  </ItemGroup>
+</Project>
