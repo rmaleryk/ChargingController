@@ -13,13 +13,19 @@
 
 	@section  HISTORY
 
-    v1.0  - First release
+	***										   ***
+	* Edited for BlackLib using by Roman Maleryk *
+	***										   ***	
+    
+	v1.0  - First release
 */
 /**************************************************************************/
-
+#pragma once
+#include "../BlackI2C/BlackI2C.h"
 #include <stdint.h>
 #include <unistd.h>
 
+/*=========================================================================*/
 /*=========================================================================
     I2C ADDRESS/BITS
     -----------------------------------------------------------------------*/
@@ -107,7 +113,7 @@
 class INA219
 {
 	public:
-	INA219(uint8_t addr = INA219_ADDRESS);
+	INA219(uint8_t addr = INA219_ADDRESS, BlackLib::i2cName channel = BlackLib::I2C_1);
 	void begin(void);
 	void begin(uint8_t addr);
 	void setCalibration_32V_2A(void);
@@ -119,6 +125,7 @@ class INA219
 
 	private:
 	uint8_t ina219_i2caddr;
+	BlackLib::i2cName i2c_channel;
 	uint32_t ina219_calValue;
 	// The following multipliers are used to convert raw current and power
 	// values to mA and mW, taking into account the current config settings

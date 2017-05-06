@@ -1,43 +1,41 @@
 // Charging Contorller Main Source
 
 #include "ChargingController.h"
-#include "INA219/INA219.h"
 #include <iostream>
 #include <unistd.h>
-
 
 int main(void)
 {
 
 	std::cout << "[ChargingController] Started" << std::endl;
 
-	INA219 ina219;
+	BatteryMeasureService *batteryMeasureService = new BatteryMeasureService;
+	PannelMeasureService *pannelMeasureService = new PannelMeasureService;
+	
 
-	ina219.begin();
-	ina219.setCalibration_16V_400mA();
-
-	while(true)
+	while (true)
 	{
-		// Charging algorithm
-
-		float shuntvoltage = 0;
-		float busvoltage = 0;
-		float current_mA = 0;
-		float loadvoltage = 0;
-
-		shuntvoltage = ina219.getShuntVoltage_mV();
-		busvoltage = ina219.getBusVoltage_V();
-		current_mA = ina219.getCurrent_mA();
-		loadvoltage = busvoltage + (shuntvoltage / 1000);
+		
+		float batteryVoltage = batteryMeasureService->getVoltage();
+		float batteryCurrent = batteryMeasureService->getCurrent();
+		float batteryTemp = batteryMeasureService->getTemperature();
+		float pannelVoltage = pannelMeasureService->getVoltage();
+		float pannelCurrent = pannelMeasureService->getCurrent();
+		float pannelTemp = pannelMeasureService->getTemperature();
 
 
+		std::cout << std::endl << "[Battery]: " << std::endl;
+		std::cout << "voltage: " << batteryVoltage << std::endl;
+		std::cout << "current: " << batteryCurrent * 0.001 << std::endl;
+		std::cout << "temperature: " << batteryTemp << std::endl;
 
-		std::cout << std::endl << "bus: " << busvoltage << std::endl;
-		std::cout << "shuntvoltage: " << shuntvoltage << std::endl;
-		std::cout << "current_mA: " << current_mA * 0.001 << std::endl;
-		std::cout << "loadvoltage: " << loadvoltage << std::endl;
+		std::cout << std::endl << "[Pannel]: " << std::endl;
+		std::cout << "voltage: " << pannelVoltage << std::endl;
+		std::cout << "current: " << pannelCurrent * 0.001 << std::endl;
+		std::cout << "temperature: " << pannelTemp << std::endl;
 
-		usleep(2000);
+		// Delay
+		usleep(1000000); // 1 sec
 
 	}
 

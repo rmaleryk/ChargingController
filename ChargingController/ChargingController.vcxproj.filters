@@ -18,6 +18,12 @@
     <ClCompile Include="INA219\INA219.cpp">
       <Filter>INA219</Filter>
     </ClCompile>
+    <ClCompile Include="Services\BatteryMeasureService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\PannelMeasureService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BlackADC">
@@ -34,6 +40,9 @@
     </Filter>
     <Filter Include="INA219">
       <UniqueIdentifier>{447aff41-592c-4352-b227-bdb5a0816277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services">
+      <UniqueIdentifier>{1a5eb8cd-f86a-4ea5-8628-ce087e0c250f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +64,12 @@
     <ClInclude Include="ChargingController.h" />
     <ClInclude Include="INA219\INA219.h">
       <Filter>INA219</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\BatteryMeasureService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\PannelMeasureService.h">
+      <Filter>Services</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
