@@ -15,12 +15,15 @@
 
 	@section  HISTORY
 
+	***										   ***
+	* Edited for BlackLib using by Roman Maleryk *
+	***										   ***
+
     v1.0 - First release
 */
 /**************************************************************************/
 
 #include "INA219.h"
-#include "../BlackI2C/BlackI2C.h"
 
 /**************************************************************************/
 /*! 
@@ -41,12 +44,22 @@ void INA219::wireWriteRegister (uint8_t reg, uint16_t value)
   #endif
   Wire.endTransmission();*/
 
-  BlackLib::BlackI2C i2cHandler(BlackLib::I2C_1, ina219_i2caddr);
-  i2cHandler.open(BlackLib::ReadWrite | BlackLib::NonBlock);
+	BlackLib::BlackI2C i2cHandler(i2c_channel, ina219_i2caddr);
+	i2cHandler.open(BlackLib::ReadWrite | BlackLib::NonBlock);
   
-  i2cHandler.writeByte(reg, reg);
-  i2cHandler.writeByte(reg, value >> 8);
-  i2cHandler.writeByte(reg, value & 0xFF);
+  //i2cHandler.writeByte(reg, reg);
+  //i2cHandler.writeByte(reg, (value >> 8) & 0xFF);
+  //i2cHandler.writeByte(reg, value & 0xFF);
+
+  uint8_t offsetValues[3];
+  offsetValues[0] = reg;
+  offsetValues[1] = ((value >> 8));// &0xFF);
+  offsetValues[2] = value & 0xFF;
+
+  bool resultOfWrite = i2cHandler.writeLine(offsetValues, sizeof(offsetValues));
+  //std::cout << "[WRITE] Offsets' new values are wrote?: " << std::boolalpha << resultOfWrite << std::dec << std::endl;
+
+  //memset(offsetValues, 0, sizeof(offsetValues));      // clear buffer
 
   i2cHandler.close();
 
@@ -79,15 +92,31 @@ void INA219::wireReadRegister(uint8_t reg, uint16_t *value)
     *value = ((Wire.receive() << 8) | Wire.receive());
   #endif*/
 	
-	BlackLib::BlackI2C i2cHandler(BlackLib::I2C_1, ina219_i2caddr);
+	BlackLib::BlackI2C i2cHandler(i2c_channel, ina219_i2caddr);
 	i2cHandler.open(BlackLib::ReadWrite | BlackLib::NonBlock);
 
-	i2cHandler.writeByte(reg, reg);
+	//i2cHandler.writeByte(ina219_i2caddr, reg);
+
+	uint8_t offsetWriteValues[1];
+	offsetWriteValues[0] = reg;
+
+	bool resultOfWrite = i2cHandler.writeLine(offsetWriteValues, sizeof(offsetWriteValues));
+	//bool resultOfWrite = i2cHandler.writeByte(reg, 1);
+	//std::cout << "[READ] Offsets' new values are wrote?: " << std::boolalpha << resultOfWrite << std::dec << std::endl;
+
+	//memset(offsetWriteValues, 0, sizeof(offsetWriteValues));      // clear buffer
 	
-	usleep(1);
+	usleep(1000);
 
-	*value = ((i2cHandler.readByte(reg) << 8) | i2cHandler.readByte(reg));
+	uint8_t offsetValues[2] = { 0x00, 0x00 };
+	uint8_t readBlockSize = i2cHandler.readLine(offsetValues, sizeof(offsetValues));
+	//std::cout << "[READ] Total read block size: " << (int)readBlockSize << std::endl;
 
+	*value = ((offsetValues[0] << 8) | offsetValues[1]);
+
+	//*value = ((i2cHandler.readByte((uint8_t)2) << 8) | i2cHandler.readByte((uint8_t)2));
+
+	//memset(offsetValues, 0, sizeof(offsetValues));      // clear buffer
 	i2cHandler.close();
 
 	
@@ -366,8 +395,9 @@ void INA219::setCalibration_16V_400mA(void) {
     @brief  Instantiates a new INA219 class
 */
 /**************************************************************************/
-INA219::INA219(uint8_t addr) {
+INA219::INA219(uint8_t addr, BlackLib::i2cName channel) {
   ina219_i2caddr = addr;
+  i2c_channel = channel;
   ina219_currentDivider_mA = 0;
   ina219_powerDivider_mW = 0;
 }
@@ -384,8 +414,8 @@ void INA219::begin(uint8_t addr) {
 
 void INA219::begin(void) {
   //Wire.begin();    
-	
-	BlackLib::BlackI2C i2cHandler(BlackLib::I2C_1, ina219_i2caddr);
+
+	BlackLib::BlackI2C i2cHandler(i2c_channel, ina219_i2caddr);
 	i2cHandler.open(BlackLib::ReadWrite | BlackLib::NonBlock);
   
   // Set chip to large range config values to start

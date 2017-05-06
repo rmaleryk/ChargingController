@@ -9,5 +9,7 @@
 #include "BlackGPIO/BlackGPIO.h"
 #include "BlackI2C/BlackI2C.h"
 
+#include "Services/BatteryMeasureService.h"
+#include "Services/PannelMeasureService.h"
 
 #endif
