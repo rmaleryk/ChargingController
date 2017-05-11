@@ -9,8 +9,8 @@ int main(void)
 
 	std::cout << "[ChargingController] Started" << std::endl;
 
-	BatteryMeasureService *batteryMeasureService = new BatteryMeasureService;
-	PannelMeasureService *pannelMeasureService = new PannelMeasureService;
+	IMeasureService *batteryMeasureService = new BatteryMeasureService;
+	IMeasureService *pannelMeasureService = new PannelMeasureService;
 	Repository *repository = new Repository;
 	LogService *logService = new LogService(repository);
 

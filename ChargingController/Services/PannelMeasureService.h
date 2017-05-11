@@ -1,6 +1,7 @@
 #include "../INA219/INA219.h"
+#include "../Services/IMeasureService.h"
 
-class PannelMeasureService
+class PannelMeasureService : public IMeasureService
 {
 	private:
 		INA219 ina219Pannel;

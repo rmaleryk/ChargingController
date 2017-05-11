@@ -9,6 +9,7 @@
 #include "BlackGPIO/BlackGPIO.h"
 #include "BlackI2C/BlackI2C.h"
 
+#include "Services/IMeasureService.h"
 #include "Services/BatteryMeasureService.h"
 #include "Services/PannelMeasureService.h"
 #include "Services/LogService.h"
