@@ -67,8 +67,10 @@
     <ClCompile Include="BlackI2C\BlackI2C.cpp" />
     <ClCompile Include="BlackPWM\BlackPWM.cpp" />
     <ClCompile Include="ChargingController.cpp" />
+    <ClCompile Include="Domain\Repository.cpp" />
     <ClCompile Include="INA219\INA219.cpp" />
     <ClCompile Include="Services\BatteryMeasureService.cpp" />
+    <ClCompile Include="Services\LogService.cpp" />
     <ClCompile Include="Services\PannelMeasureService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -80,8 +82,10 @@
     <ClInclude Include="BlackI2C\BlackI2C.h" />
     <ClInclude Include="BlackPWM\BlackPWM.h" />
     <ClInclude Include="ChargingController.h" />
+    <ClInclude Include="Domain\Repository.h" />
     <ClInclude Include="INA219\INA219.h" />
     <ClInclude Include="Services\BatteryMeasureService.h" />
+    <ClInclude Include="Services\LogService.h" />
     <ClInclude Include="Services\PannelMeasureService.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
@@ -91,6 +95,9 @@
       <CppLanguageStandard>
       </CppLanguageStandard>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>-lmysqlclient %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
