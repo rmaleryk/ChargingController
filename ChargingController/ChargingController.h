@@ -11,5 +11,8 @@
 
 #include "Services/BatteryMeasureService.h"
 #include "Services/PannelMeasureService.h"
+#include "Services/LogService.h"
+
+#include "Domain/Repository.h"
 
 #endif

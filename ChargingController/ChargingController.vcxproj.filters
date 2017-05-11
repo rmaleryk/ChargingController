@@ -24,6 +24,12 @@
     <ClCompile Include="Services\PannelMeasureService.cpp">
       <Filter>Services</Filter>
     </ClCompile>
+    <ClCompile Include="Services\LogService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Repository.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BlackADC">
@@ -43,6 +49,9 @@
     </Filter>
     <Filter Include="Services">
       <UniqueIdentifier>{1a5eb8cd-f86a-4ea5-8628-ce087e0c250f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Domain">
+      <UniqueIdentifier>{86f7eea4-ecc6-43ff-b238-604ce2f4a4bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +79,12 @@
     </ClInclude>
     <ClInclude Include="Services\PannelMeasureService.h">
       <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\LogService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Repository.h">
+      <Filter>Domain</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

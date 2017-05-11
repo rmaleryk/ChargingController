@@ -11,7 +11,10 @@ int main(void)
 
 	BatteryMeasureService *batteryMeasureService = new BatteryMeasureService;
 	PannelMeasureService *pannelMeasureService = new PannelMeasureService;
-	
+	Repository *repository = new Repository;
+	LogService *logService = new LogService(repository);
+
+	int loopStep = 0;
 
 	while (true)
 	{
@@ -34,8 +37,18 @@ int main(void)
 		std::cout << "current: " << pannelCurrent * 0.001 << std::endl;
 		std::cout << "temperature: " << pannelTemp << std::endl;
 
+		if (loopStep >= 10) // 1 time per 10 sec
+		{
+			// Push data to the DB
+			logService->insertBatteryLog(1, batteryVoltage, batteryCurrent * 0.001, batteryTemp);
+			logService->insertPanelLog(1, pannelVoltage, pannelCurrent * 0.001, pannelTemp);
+
+			loopStep = 0;
+		}
+
 		// Delay
 		usleep(1000000); // 1 sec
+		loopStep++;
 
 	}
 
