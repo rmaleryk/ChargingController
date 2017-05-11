@@ -3,8 +3,9 @@
 #include <mysql/mysql.h>
 #include <iostream>
 #include <stdio.h>
+#include "../Domain/IRepository.h"
 
-class Repository
+class Repository : public IRepository
 {
 public:
 	Repository();

@@ -86,5 +86,14 @@
     <ClInclude Include="Domain\Repository.h">
       <Filter>Domain</Filter>
     </ClInclude>
+    <ClInclude Include="Services\IMeasureService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\IRepository.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\ILogService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -9,10 +9,10 @@ int main(void)
 
 	std::cout << "[ChargingController] Started" << std::endl;
 
-	BatteryMeasureService *batteryMeasureService = new BatteryMeasureService;
-	PannelMeasureService *pannelMeasureService = new PannelMeasureService;
-	Repository *repository = new Repository;
-	LogService *logService = new LogService(repository);
+	IMeasureService *batteryMeasureService = new BatteryMeasureService;
+	IMeasureService *pannelMeasureService = new PannelMeasureService;
+	IRepository *repository = new Repository;
+	ILogService *logService = new LogService(repository);
 
 	int loopStep = 0;
 
