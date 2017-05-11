@@ -83,7 +83,9 @@
     <ClInclude Include="BlackPWM\BlackPWM.h" />
     <ClInclude Include="ChargingController.h" />
     <ClInclude Include="Domain\Repository.h" />
+    <ClInclude Include="Services\ILogService.h" />
     <ClInclude Include="INA219\INA219.h" />
+    <ClInclude Include="Domain\IRepository.h" />
     <ClInclude Include="Services\BatteryMeasureService.h" />
     <ClInclude Include="Services\IMeasureService.h" />
     <ClInclude Include="Services\LogService.h" />

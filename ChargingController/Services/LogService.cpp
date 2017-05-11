@@ -1,7 +1,7 @@
 #include "LogService.h"
 
 
-LogService::LogService(Repository *repository)
+LogService::LogService(IRepository *repository)
 {
 	this->repository = repository;
 }

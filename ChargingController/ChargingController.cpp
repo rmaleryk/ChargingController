@@ -11,8 +11,8 @@ int main(void)
 
 	IMeasureService *batteryMeasureService = new BatteryMeasureService;
 	IMeasureService *pannelMeasureService = new PannelMeasureService;
-	Repository *repository = new Repository;
-	LogService *logService = new LogService(repository);
+	IRepository *repository = new Repository;
+	ILogService *logService = new LogService(repository);
 
 	int loopStep = 0;
 
