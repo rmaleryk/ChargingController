@@ -33,6 +33,7 @@
 
 
 #include "../BlackCore.h"
+#include <unistd.h>
 #include <iostream>
 
 #include <cstring>

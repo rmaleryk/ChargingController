@@ -1,6 +1,10 @@
 #ifndef CHARGINGCONTROLLER_H
 #define CHARGINGCONTROLLER_H
 
+#include <iostream>
+#include <unistd.h>
+#include <string>
+
 // Include BlackLib BeagleBone Library
 
 #include "BlackCore.h"
@@ -12,8 +16,13 @@
 #include "Services/IMeasureService.h"
 #include "Services/BatteryMeasureService.h"
 #include "Services/PannelMeasureService.h"
-#include "Services/LogService.h"
+#include "Services/PWMChargingService.h"
+#include "Services/MySqlDBService.h"
 
-#include "Domain/Repository.h"
+#include "Domain/LogRepository.h"
+#include "Domain/Battery.h"
+#include "Domain/Panel.h"
+#include "Domain/BatteryRepository.h"
+#include "Domain/PanelRepository.h"
 
 #endif
