@@ -39,6 +39,12 @@
     <ClCompile Include="Domain\LogRepository.cpp">
       <Filter>Domain</Filter>
     </ClCompile>
+    <ClCompile Include="Domain\NotificationRepository.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\NotificationService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BlackADC">
@@ -118,6 +124,15 @@
     </ClInclude>
     <ClInclude Include="Domain\LogRepository.h">
       <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Notification.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\NotificationRepository.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\NotificationService.h">
+      <Filter>Services</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
