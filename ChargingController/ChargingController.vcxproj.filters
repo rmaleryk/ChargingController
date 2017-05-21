@@ -24,10 +24,19 @@
     <ClCompile Include="Services\PannelMeasureService.cpp">
       <Filter>Services</Filter>
     </ClCompile>
-    <ClCompile Include="Services\LogService.cpp">
+    <ClCompile Include="Services\PWMChargingService.cpp">
       <Filter>Services</Filter>
     </ClCompile>
-    <ClCompile Include="Domain\Repository.cpp">
+    <ClCompile Include="Domain\BatteryRepository.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\PanelRepository.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\MySqlDBService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\LogRepository.cpp">
       <Filter>Domain</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,20 +89,35 @@
     <ClInclude Include="Services\PannelMeasureService.h">
       <Filter>Services</Filter>
     </ClInclude>
-    <ClInclude Include="Services\LogService.h">
-      <Filter>Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Domain\Repository.h">
-      <Filter>Domain</Filter>
-    </ClInclude>
     <ClInclude Include="Services\IMeasureService.h">
       <Filter>Services</Filter>
     </ClInclude>
-    <ClInclude Include="Domain\IRepository.h">
-      <Filter>Domain</Filter>
-    </ClInclude>
     <ClInclude Include="Services\ILogService.h">
       <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\PWMChargingService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\IChargingService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Battery.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Panel.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\BatteryRepository.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\PanelRepository.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\MySqlDBService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\LogRepository.h">
+      <Filter>Domain</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

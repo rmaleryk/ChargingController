@@ -67,10 +67,13 @@
     <ClCompile Include="BlackI2C\BlackI2C.cpp" />
     <ClCompile Include="BlackPWM\BlackPWM.cpp" />
     <ClCompile Include="ChargingController.cpp" />
-    <ClCompile Include="Domain\Repository.cpp" />
+    <ClCompile Include="Domain\BatteryRepository.cpp" />
+    <ClCompile Include="Domain\PanelRepository.cpp" />
+    <ClCompile Include="Domain\LogRepository.cpp" />
     <ClCompile Include="INA219\INA219.cpp" />
     <ClCompile Include="Services\BatteryMeasureService.cpp" />
-    <ClCompile Include="Services\LogService.cpp" />
+    <ClCompile Include="Services\MySqlDBService.cpp" />
+    <ClCompile Include="Services\PWMChargingService.cpp" />
     <ClCompile Include="Services\PannelMeasureService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -82,13 +85,18 @@
     <ClInclude Include="BlackI2C\BlackI2C.h" />
     <ClInclude Include="BlackPWM\BlackPWM.h" />
     <ClInclude Include="ChargingController.h" />
-    <ClInclude Include="Domain\Repository.h" />
+    <ClInclude Include="Domain\Battery.h" />
+    <ClInclude Include="Domain\BatteryRepository.h" />
+    <ClInclude Include="Domain\Panel.h" />
+    <ClInclude Include="Domain\PanelRepository.h" />
+    <ClInclude Include="Domain\LogRepository.h" />
+    <ClInclude Include="Services\IChargingService.h" />
+    <ClInclude Include="Services\MySqlDBService.h" />
+    <ClInclude Include="Services\PWMChargingService.h" />
     <ClInclude Include="Services\ILogService.h" />
     <ClInclude Include="INA219\INA219.h" />
-    <ClInclude Include="Domain\IRepository.h" />
     <ClInclude Include="Services\BatteryMeasureService.h" />
     <ClInclude Include="Services\IMeasureService.h" />
-    <ClInclude Include="Services\LogService.h" />
     <ClInclude Include="Services\PannelMeasureService.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
