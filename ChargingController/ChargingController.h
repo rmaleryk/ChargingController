@@ -18,11 +18,13 @@
 #include "Services/PannelMeasureService.h"
 #include "Services/PWMChargingService.h"
 #include "Services/MySqlDBService.h"
+#include "Services/NotificationService.h"
 
 #include "Domain/LogRepository.h"
 #include "Domain/Battery.h"
 #include "Domain/Panel.h"
 #include "Domain/BatteryRepository.h"
 #include "Domain/PanelRepository.h"
+#include "Domain/NotificationRepository.h"
 
 #endif

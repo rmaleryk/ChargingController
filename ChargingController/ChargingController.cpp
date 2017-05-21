@@ -7,18 +7,21 @@ int main(void)
 
 	BatteryMeasureService *batteryMeasureService = new BatteryMeasureService;
 	IMeasureService *pannelMeasureService = new PannelMeasureService;
-	
+
 	MySqlDBService *mySqlDbService = new MySqlDBService;
 	LogRepository *logRepository = new LogRepository(mySqlDbService);
+
+	NotificationRepository *notificationRepository = new NotificationRepository(mySqlDbService);
+	NotificationService *notificationService = new NotificationService(notificationRepository);
 
 	Battery *battery = new Battery;
 	BatteryRepository *batteryRepository = new BatteryRepository(mySqlDbService);
 	battery = batteryRepository->getBatteryById(1);
-	
+
 	Panel *panel = new Panel;
 	PanelRepository *panelRepository = new PanelRepository(mySqlDbService);
 	panel = panelRepository->getPanelById(1);
-	
+
 	BlackLib::BlackPWM *pwmHandler = new BlackLib::BlackPWM(BlackLib::EHRPWM2A); // P8_19
 	IChargingService *chargingService = new PWMChargingService(batteryMeasureService, pwmHandler, battery);
 
@@ -26,6 +29,7 @@ int main(void)
 	int stepResult = 0;
 
 	std::cout << "[ChargingController] Started" << std::endl;
+	notificationService->startNotification();
 
 	while (true)
 	{
@@ -63,6 +67,9 @@ int main(void)
 			std::cout << "[LogService]: Data was sent" << std::endl;
 			loopStep = 0;
 		}
+
+		// Execute checking for Notification
+		notificationService->checkingProcess(battery, panel);
 
 		// Delay
 		usleep(1000000); // 1 sec

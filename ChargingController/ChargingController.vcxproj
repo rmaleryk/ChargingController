@@ -68,11 +68,13 @@
     <ClCompile Include="BlackPWM\BlackPWM.cpp" />
     <ClCompile Include="ChargingController.cpp" />
     <ClCompile Include="Domain\BatteryRepository.cpp" />
+    <ClCompile Include="Domain\NotificationRepository.cpp" />
     <ClCompile Include="Domain\PanelRepository.cpp" />
     <ClCompile Include="Domain\LogRepository.cpp" />
     <ClCompile Include="INA219\INA219.cpp" />
     <ClCompile Include="Services\BatteryMeasureService.cpp" />
     <ClCompile Include="Services\MySqlDBService.cpp" />
+    <ClCompile Include="Services\NotificationService.cpp" />
     <ClCompile Include="Services\PWMChargingService.cpp" />
     <ClCompile Include="Services\PannelMeasureService.cpp" />
   </ItemGroup>
@@ -87,11 +89,14 @@
     <ClInclude Include="ChargingController.h" />
     <ClInclude Include="Domain\Battery.h" />
     <ClInclude Include="Domain\BatteryRepository.h" />
+    <ClInclude Include="Domain\Notification.h" />
+    <ClInclude Include="Domain\NotificationRepository.h" />
     <ClInclude Include="Domain\Panel.h" />
     <ClInclude Include="Domain\PanelRepository.h" />
     <ClInclude Include="Domain\LogRepository.h" />
     <ClInclude Include="Services\IChargingService.h" />
     <ClInclude Include="Services\MySqlDBService.h" />
+    <ClInclude Include="Services\NotificationService.h" />
     <ClInclude Include="Services\PWMChargingService.h" />
     <ClInclude Include="Services\ILogService.h" />
     <ClInclude Include="INA219\INA219.h" />
